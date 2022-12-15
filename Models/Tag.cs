@@ -1,6 +1,4 @@
-using Blog.Models;
-
-namespace Blog.Data
+namespace Blog.Models
 {
     public class Tag
     {
