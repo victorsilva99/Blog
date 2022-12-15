@@ -37,7 +37,7 @@ namespace Blog.Controllers
             await context.Categories.AddAsync(model);
             await context.SaveChangesAsync();
 
-            return Ok(model);
+            return Created($"v1/categories/{model.Id}", model);
         }
 
         [HttpPut("v1/categories/{id:int}")]
@@ -58,7 +58,7 @@ namespace Blog.Controllers
             context.Update(category);
             await context.SaveChangesAsync();
 
-            return Created($"v1/categories/{model.Id}", model);
+            return Ok(model);
         }
 
         [HttpDelete("v1/categories/{id:int}")]
